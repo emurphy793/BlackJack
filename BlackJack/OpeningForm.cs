@@ -23,7 +23,7 @@ namespace BlackJack
         {
 
             ConstructDeckOfCards(deck);
-
+            int i = 9;
             string myDeck = string.Empty;
 
 
