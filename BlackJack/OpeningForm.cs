@@ -21,9 +21,9 @@ namespace BlackJack
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-
+            //this is a comment
             ConstructDeckOfCards(deck);
-            int i = 9;
+            int i = 8;
             string myDeck = string.Empty;
 
 
