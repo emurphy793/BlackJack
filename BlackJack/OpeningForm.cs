@@ -12,7 +12,8 @@ namespace BlackJack
 {
     public partial class PlayBlackjack : Form
     {
-        List<Card> deck = new List<Card>();
+        private List<Card> deck = new List<Card>();
+        private List<Card> myHand = new List<Card>();
 
         public PlayBlackjack()
         {
@@ -21,11 +22,7 @@ namespace BlackJack
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            //this is a comment
-            ConstructDeckOfCards(deck);
-            int i = 8;
             string myDeck = string.Empty;
-
 
             foreach (Card item in deck)
             {
@@ -59,12 +56,10 @@ namespace BlackJack
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void DealCard(object sender, EventArgs e)
         {
-            List<Card> myHand = new List<Card>();
-           
-            {
-                Random dealCard = new Random();
+            
+               Random dealCard = new Random();
 
                 int nextCardIndex = dealCard.Next(0, 52);
                 if (!deck[nextCardIndex].Dealt) ;
@@ -72,7 +67,12 @@ namespace BlackJack
                     myHand.Add(deck[nextCardIndex]);
                     deck[nextCardIndex].Dealt = true;
                 }
-            }
+            
+        }
+
+        private void PlayBlackjack_Load(object sender, EventArgs e)
+        {
+            ConstructDeckOfCards(deck);
         }
     }
 }
