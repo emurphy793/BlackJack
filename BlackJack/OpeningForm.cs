@@ -18,6 +18,7 @@ namespace BlackJack
         public PlayBlackjack()
         {
             InitializeComponent();
+            rtbHand1.Text = string.Empty;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -27,7 +28,6 @@ namespace BlackJack
             foreach (Card item in deck)
             {
                 myDeck += string.Format("{0} of {1} \n", item.myCard.ToString(), item.Suit);
-                System.Console.WriteLine();
             }
             rtbOutput.Text = myDeck;
         }
@@ -58,21 +58,34 @@ namespace BlackJack
 
         private void DealCard(object sender, EventArgs e)
         {
-            
-               Random dealCard = new Random();
+            Random number = new Random();
+            int nextCardIndex = number.Next(0, 52);
 
-                int nextCardIndex = dealCard.Next(0, 52);
-                if (!deck[nextCardIndex].Dealt) ;
-                {
+            while (deck[nextCardIndex].Dealt)
+            {
+                nextCardIndex = number.Next(0, 52);
+            }
+
                     myHand.Add(deck[nextCardIndex]);
                     deck[nextCardIndex].Dealt = true;
-                }
+                    rtbHand1.Text += string.Format("{0} of {1} \n", deck[nextCardIndex].myCard.ToString(), deck[nextCardIndex].Suit);
+
             
         }
 
         private void PlayBlackjack_Load(object sender, EventArgs e)
         {
             ConstructDeckOfCards(deck);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
