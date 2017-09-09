@@ -18,14 +18,12 @@ namespace BlackJack
         public PlayBlackjack()
         {
             InitializeComponent();
-            rtbMyHand1.Text = string.Empty;
+            rtbHand1.Text = string.Empty;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            //this is a comment
             string myDeck = string.Empty;
-
 
             foreach (Card item in deck)
             {
@@ -36,10 +34,6 @@ namespace BlackJack
 
         private void ConstructDeckOfCards(List<Card> deck)
         {
-            while (true)
-            {
-                int i = 7;
-            }
             for (int i = 0; i < 52; i++)
             {
                 deck.Add(null);
@@ -62,27 +56,36 @@ namespace BlackJack
 
         }
 
-        private void btnDeal_Click(object sender, EventArgs e)
+        private void DealCard(object sender, EventArgs e)
         {
-             {
-                Random randNo = new Random();
-                int nextCardIndex = randNo.Next(0, 52);
+            Random number = new Random();
+            int nextCardIndex = number.Next(0, 52);
 
-                while (deck[nextCardIndex].Dealt)
-                {
-                    nextCardIndex = randNo.Next(0, 52);
-                }
-
-                myHand.Add(deck[nextCardIndex]);
-                rtbMyHand1.Text += string.Format("{0} of {1} \n", deck[nextCardIndex].myCard.ToString(), deck[nextCardIndex].Suit);
-                deck[nextCardIndex].Dealt = true;
-
+            while (deck[nextCardIndex].Dealt)
+            {
+                nextCardIndex = number.Next(0, 52);
             }
+
+                    myHand.Add(deck[nextCardIndex]);
+                    deck[nextCardIndex].Dealt = true;
+                    rtbHand1.Text += string.Format("{0} of {1} \n", deck[nextCardIndex].myCard.ToString(), deck[nextCardIndex].Suit);
+
+            
         }
 
         private void PlayBlackjack_Load(object sender, EventArgs e)
         {
             ConstructDeckOfCards(deck);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
