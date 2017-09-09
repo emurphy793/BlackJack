@@ -12,31 +12,34 @@ namespace BlackJack
 {
     public partial class PlayBlackjack : Form
     {
-        List<Card> deck = new List<Card>();
+        private List<Card> deck = new List<Card>();
+        private List<Card> myHand = new List<Card>();
 
         public PlayBlackjack()
         {
             InitializeComponent();
+            rtbMyHand1.Text = string.Empty;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             //this is a comment
-            ConstructDeckOfCards(deck);
-            int i = 8;
             string myDeck = string.Empty;
 
 
             foreach (Card item in deck)
             {
                 myDeck += string.Format("{0} of {1} \n", item.myCard.ToString(), item.Suit);
-                System.Console.WriteLine();
             }
             rtbOutput.Text = myDeck;
         }
 
         private void ConstructDeckOfCards(List<Card> deck)
         {
+            while (true)
+            {
+                int i = 7;
+            }
             for (int i = 0; i < 52; i++)
             {
                 deck.Add(null);
@@ -59,20 +62,27 @@ namespace BlackJack
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDeal_Click(object sender, EventArgs e)
         {
-            List<Card> myHand = new List<Card>();
-           
-            {
-                Random dealCard = new Random();
+             {
+                Random randNo = new Random();
+                int nextCardIndex = randNo.Next(0, 52);
 
-                int nextCardIndex = dealCard.Next(0, 52);
-                if (!deck[nextCardIndex].Dealt) ;
+                while (deck[nextCardIndex].Dealt)
                 {
-                    myHand.Add(deck[nextCardIndex]);
-                    deck[nextCardIndex].Dealt = true;
+                    nextCardIndex = randNo.Next(0, 52);
                 }
+
+                myHand.Add(deck[nextCardIndex]);
+                rtbMyHand1.Text += string.Format("{0} of {1} \n", deck[nextCardIndex].myCard.ToString(), deck[nextCardIndex].Suit);
+                deck[nextCardIndex].Dealt = true;
+
             }
+        }
+
+        private void PlayBlackjack_Load(object sender, EventArgs e)
+        {
+            ConstructDeckOfCards(deck);
         }
     }
 }

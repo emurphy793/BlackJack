@@ -31,14 +31,15 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.txtCard = new System.Windows.Forms.TextBox();
             this.rtbOutput = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDealCard = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.rtbMyHand1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnStart
             // 
             this.btnStart.Location = new System.Drawing.Point(16, 15);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(100, 28);
             this.btnStart.TabIndex = 0;
@@ -49,7 +50,7 @@
             // txtCard
             // 
             this.txtCard.Location = new System.Drawing.Point(43, 60);
-            this.txtCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCard.Margin = new System.Windows.Forms.Padding(4);
             this.txtCard.Name = "txtCard";
             this.txtCard.Size = new System.Drawing.Size(287, 22);
             this.txtCard.TabIndex = 1;
@@ -57,22 +58,22 @@
             // rtbOutput
             // 
             this.rtbOutput.Location = new System.Drawing.Point(43, 92);
-            this.rtbOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbOutput.Margin = new System.Windows.Forms.Padding(4);
             this.rtbOutput.Name = "rtbOutput";
             this.rtbOutput.Size = new System.Drawing.Size(287, 213);
             this.rtbOutput.TabIndex = 2;
             this.rtbOutput.Text = "";
             // 
-            // button1
+            // btnDealCard
             // 
-            this.button1.Location = new System.Drawing.Point(137, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDealCard.Location = new System.Drawing.Point(137, 14);
+            this.btnDealCard.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDealCard.Name = "btnDealCard";
+            this.btnDealCard.Size = new System.Drawing.Size(100, 28);
+            this.btnDealCard.TabIndex = 3;
+            this.btnDealCard.Text = "Deal Card";
+            this.btnDealCard.UseVisualStyleBackColor = true;
+            this.btnDealCard.Click += new System.EventHandler(this.btnDeal_Click);
             // 
             // button2
             // 
@@ -83,19 +84,29 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // rtbMyHand1
+            // 
+            this.rtbMyHand1.Location = new System.Drawing.Point(353, 92);
+            this.rtbMyHand1.Name = "rtbMyHand1";
+            this.rtbMyHand1.Size = new System.Drawing.Size(203, 213);
+            this.rtbMyHand1.TabIndex = 5;
+            this.rtbMyHand1.Text = "";
+            // 
             // PlayBlackjack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 321);
+            this.ClientSize = new System.Drawing.Size(986, 582);
+            this.Controls.Add(this.rtbMyHand1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDealCard);
             this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.txtCard);
             this.Controls.Add(this.btnStart);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PlayBlackjack";
             this.Text = "BlackJack";
+            this.Load += new System.EventHandler(this.PlayBlackjack_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,8 +117,9 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.TextBox txtCard;
         private System.Windows.Forms.RichTextBox rtbOutput;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDealCard;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox rtbMyHand1;
     }
 }
 

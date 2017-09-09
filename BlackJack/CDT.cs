@@ -12,6 +12,7 @@ namespace BlackJack
         private string suit;
         private int card;
         private bool dealt;
+        private int pointValue;
 
         public Card()
         {
@@ -24,6 +25,7 @@ namespace BlackJack
             this.suit = suit;
             this.dealt = false;
             this.card = card;
+            this.pointValue = (cardValue % 13) + 1;
         }
 
         public int CardValue
@@ -49,7 +51,12 @@ namespace BlackJack
             set { dealt = value; }
         }
 
-        
+        public int PointValue
+        {
+            get { return pointValue; }
+        }
+
+
 
     }
 
