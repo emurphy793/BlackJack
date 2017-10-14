@@ -13,6 +13,7 @@ namespace BlackJack
         private int card;
         private bool dealt;
         private int pointValue;
+        private int zeroTo10Value;
 
         public Card()
         {
@@ -26,6 +27,7 @@ namespace BlackJack
             this.dealt = false;
             this.card = card;
             this.pointValue = (cardValue % 13) + 1;
+
         }
 
         public int CardValue

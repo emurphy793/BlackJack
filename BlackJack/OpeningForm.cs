@@ -69,6 +69,7 @@ namespace BlackJack
                     myHand.Add(deck[nextCardIndex]);
                     deck[nextCardIndex].Dealt = true;
                     rtbHand1.Text += string.Format("{0} of {1} \n", deck[nextCardIndex].myCard.ToString(), deck[nextCardIndex].Suit);
+                    
 
             
         }
@@ -84,6 +85,16 @@ namespace BlackJack
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCard_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
