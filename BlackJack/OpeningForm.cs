@@ -12,8 +12,12 @@ namespace BlackJack
 {
     public partial class PlayBlackjack : Form
     {
+        Card myCard = new Card();
         private List<Card> deck = new List<Card>();
         private List<Card> myHand = new List<Card>();
+        private CardsPlus myNewCard = new CardsPlus();
+
+
 
         public PlayBlackjack()
         {
@@ -58,20 +62,31 @@ namespace BlackJack
 
         private void DealCard(object sender, EventArgs e)
         {
+            if (myHand.Count == 0)
+            {
+                Dealer();
+            }
+            Dealer();
+
+                     
+        }
+
+        private void Dealer()
+        {
             Random number = new Random();
             int nextCardIndex = number.Next(0, 52);
 
-            while (deck[nextCardIndex].Dealt)
-            {
-                nextCardIndex = number.Next(0, 52);
-            }
+          
+                while (deck[nextCardIndex].Dealt)
+                {
+                    nextCardIndex = number.Next(0, 52);
+                }
 
-                    myHand.Add(deck[nextCardIndex]);
-                    deck[nextCardIndex].Dealt = true;
-                    rtbHand1.Text += string.Format("{0} of {1} \n", deck[nextCardIndex].myCard.ToString(), deck[nextCardIndex].Suit);
-                    
-
-            
+                myHand.Add(deck[nextCardIndex]);
+                deck[nextCardIndex].Dealt = true;
+                rtbHand1.Text += string.Format("{0} of {1} \n", deck[nextCardIndex].myCard.ToString(), deck[nextCardIndex].Suit);
+          
+           
         }
 
         private void PlayBlackjack_Load(object sender, EventArgs e)
@@ -79,24 +94,5 @@ namespace BlackJack
             ConstructDeckOfCards(deck);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCard_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardsPlus.cs" />
     <Compile Include="CDT.cs" />
     <Compile Include="OpeningForm.cs">
       <SubType>Form</SubType>

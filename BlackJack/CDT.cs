@@ -27,7 +27,6 @@ namespace BlackJack
             this.dealt = false;
             this.card = card;
             this.pointValue = (cardValue % 13) + 1;
-
         }
 
         public int CardValue
@@ -47,19 +46,18 @@ namespace BlackJack
             private set { }
         }
 
-        public bool Dealt
-        {
-            get { return dealt; }
-            set { dealt = value; }
-        }
+      public bool Dealt
+      {
+        get { return dealt; }
+        set { dealt = value; }
+       }
+
+    
 
         public int PointValue
         {
             get { return pointValue; }
         }
-
-
-
     }
 
       public class Hand

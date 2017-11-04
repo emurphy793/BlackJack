@@ -55,7 +55,6 @@
             this.txtCard.Name = "txtCard";
             this.txtCard.Size = new System.Drawing.Size(287, 22);
             this.txtCard.TabIndex = 1;
-            this.txtCard.TextChanged += new System.EventHandler(this.txtCard_TextChanged);
             // 
             // rtbOutput
             // 
@@ -86,7 +85,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+
             // 
             // rtbHand1
             // 
@@ -96,7 +95,7 @@
             this.rtbHand1.Size = new System.Drawing.Size(287, 213);
             this.rtbHand1.TabIndex = 6;
             this.rtbHand1.Text = "";
-            this.rtbHand1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+
             // 
             // txtHandValue
             // 
