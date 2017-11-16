@@ -40,7 +40,7 @@
             // btnStart
             // 
             this.btnStart.Location = new System.Drawing.Point(16, 15);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(100, 28);
             this.btnStart.TabIndex = 0;
@@ -51,7 +51,7 @@
             // txtCard
             // 
             this.txtCard.Location = new System.Drawing.Point(43, 60);
-            this.txtCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCard.Margin = new System.Windows.Forms.Padding(4);
             this.txtCard.Name = "txtCard";
             this.txtCard.Size = new System.Drawing.Size(287, 22);
             this.txtCard.TabIndex = 1;
@@ -59,7 +59,7 @@
             // rtbOutput
             // 
             this.rtbOutput.Location = new System.Drawing.Point(43, 92);
-            this.rtbOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbOutput.Margin = new System.Windows.Forms.Padding(4);
             this.rtbOutput.Name = "rtbOutput";
             this.rtbOutput.Size = new System.Drawing.Size(287, 213);
             this.rtbOutput.TabIndex = 2;
@@ -68,7 +68,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(137, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 3;
@@ -85,17 +85,15 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-
             // 
             // rtbHand1
             // 
             this.rtbHand1.Location = new System.Drawing.Point(401, 92);
-            this.rtbHand1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbHand1.Margin = new System.Windows.Forms.Padding(4);
             this.rtbHand1.Name = "rtbHand1";
             this.rtbHand1.Size = new System.Drawing.Size(287, 213);
             this.rtbHand1.TabIndex = 6;
             this.rtbHand1.Text = "";
-
             // 
             // txtHandValue
             // 
@@ -103,6 +101,7 @@
             this.txtHandValue.Name = "txtHandValue";
             this.txtHandValue.Size = new System.Drawing.Size(187, 22);
             this.txtHandValue.TabIndex = 7;
+            this.txtHandValue.TextChanged += new System.EventHandler(this.txtHandValue_TextChanged);
             // 
             // PlayBlackjack
             // 
@@ -116,7 +115,7 @@
             this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.txtCard);
             this.Controls.Add(this.btnStart);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PlayBlackjack";
             this.Text = "BlackJack";
             this.Load += new System.EventHandler(this.PlayBlackjack_Load);
