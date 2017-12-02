@@ -54,9 +54,7 @@ namespace BlackJack
       {
         get { return dealt; }
         set { dealt = value; }
-       }
-
-    
+      }
 
         public int PointValue
         {
@@ -77,8 +75,5 @@ namespace BlackJack
         {
             myHand.Add(myCard);
         }
-
-        
-
     }
 }
