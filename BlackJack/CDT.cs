@@ -26,6 +26,10 @@ namespace BlackJack
             this.dealt = false;
             this.card = card;
             this.pointValue = (cardValue % 13) + 1;
+			if (this.pointValue > 10)
+			{
+				pointValue = 10;
+			}		
         }
 
         public int CardValue
