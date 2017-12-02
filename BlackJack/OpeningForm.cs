@@ -68,18 +68,8 @@ namespace BlackJack
             }
             Dealer();
 
-            txtHandValue.Text = getHandValue().ToString();
+            txtHandValue.Text = Values.getHandValue(this.myHand).ToString();
                      
-        }
-
-        public int getHandValue()
-        {
-            int total = 0;
-            foreach (Card item in this.myHand)
-            {
-                total += item.PointValue;
-            }
-            return total;
         }
 
         private void Dealer()
