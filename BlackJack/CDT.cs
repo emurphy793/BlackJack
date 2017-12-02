@@ -13,6 +13,7 @@ namespace BlackJack
         private int card;
         private bool dealt;
         private int pointValue;
+        private int zeroTo10Value;
 
         public Card()
         {
@@ -26,10 +27,10 @@ namespace BlackJack
             this.dealt = false;
             this.card = card;
             this.pointValue = (cardValue % 13) + 1;
-			if (this.pointValue > 10)
-			{
-				pointValue = 10;
-			}		
+            if (this.pointValue>10) 
+            {
+                pointValue = 10;
+            }
         }
 
         public int CardValue
@@ -49,46 +50,30 @@ namespace BlackJack
             private set { }
         }
 
-        public bool Dealt
-        {
-            get { return dealt; }
-            set { dealt = value; }
-        }
+      public bool Dealt
+      {
+        get { return dealt; }
+        set { dealt = value; }
+      }
 
         public int PointValue
         {
             get { return pointValue; }
         }
-
-
-
     }
 
       public class Hand
     {
         private List<Card> Cards;
 
-        public Hand()
-        {
-
-        }
-
         public Hand(Card card)
         {
             this.Cards.Add(card);
         }
 
-
         public void AddCard(List<Card> myHand, Card myCard)
         {
             myHand.Add(myCard);
         }
-
-
-
-
-
-
-
     }
 }
